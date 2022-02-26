@@ -2166,12 +2166,11 @@ input, select, textarea {
 					height: 50px;
 					margin-bottom: 50px;
 					border-radius: 10px;
+					cursor: pointer;
 				}
 @media(max-width:767px){
     .podcast div{
     width: 90%;
 	}
 }
-.pod-icon{
-	background-image: url(.);
-}
+
