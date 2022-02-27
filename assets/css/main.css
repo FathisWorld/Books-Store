@@ -1310,7 +1310,7 @@ input, select, textarea {
 	}
 
 	body {
-		background-image: url("images/overlay.png"), url("images/bg.jpg");
+		background-color: #123834;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
 		background-attachment: fixed;
@@ -1782,7 +1782,7 @@ input, select, textarea {
 		#nav a {
 			position: relative;
 			display: inline-block;
-			color: #ffffff;
+			color: #f3fff4;
 			width: 1em;
 			height: 1em;
 			line-height: 0.9em;
@@ -1811,7 +1811,7 @@ input, select, textarea {
 				left: 50%;
 				bottom: -0.75em;
 				margin-left: -0.5em;
-				border-bottom: solid 0em #ffffff;
+				border-bottom: solid 0em #f3fff4;
 				border-left: solid 0.5em transparent;
 				border-right: solid 0.5em transparent;
 				-moz-transition: border-bottom-width .25s ease-in-out;
@@ -1944,13 +1944,6 @@ input, select, textarea {
 			}
 
 		}
-		.image.fit:hover{
-			position: absolute;
-			width: 662px;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
 
 /* Main */
 
@@ -1958,13 +1951,14 @@ input, select, textarea {
 		position: relative;
 		overflow: hidden;
 		width: 100%;
-		background: #ffffff;
+		background: #f3fff4;
 		box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
 		-moz-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		-webkit-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		-ms-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		border-radius: 10px;
+		box-shadow: 0px 0px 10px 3px #22222247;
 	}
 
 		#main > .panel {
@@ -2027,7 +2021,6 @@ input, select, textarea {
 						position: absolute;
 						top: 0;
 						left: 0;
-						background: url("images/overlay.png");
 						width: 100%;
 						height: 100%;
 						z-index: 1;
@@ -2052,10 +2045,10 @@ input, select, textarea {
 					}
 
 					#main > .panel.intro .pic .arrow {
-						display: block;
+						display: none;
 						position: absolute;
 						right: 0;
-						top: 50%;
+						top: 100%;
 						margin-top: -1.375em;
 						width: 2.75em;
 						height: 2.75em;
@@ -2118,10 +2111,10 @@ input, select, textarea {
 				@media screen and (max-width: 980px) {
 
 					#main > .panel.intro {
-						-moz-flex-direction: column;
+						-moz-flex-direction: column-revers;
 						-webkit-flex-direction: column;
-						-ms-flex-direction: column;
-						flex-direction: column;
+						-webkit-flex-direction: column-reverse;
+						flex-direction: column-reverse;
 						height: auto;
 					}
 
@@ -2151,8 +2144,66 @@ input, select, textarea {
 							font-size: 1em;
 							margin: 0.25em 0 0 0;
 						}
+						#main{
+							border-radius: 50px;
+						}
+						#main > .panel.intro .pic img{
+							border-radius: 147px;
+							height: 80%;
+							width: 70%;
+							position: absolute;
+							left: 50%;
+							top: 50%;
+							transform: translate(-50%, -50%);
+							box-shadow: 0px 6px 18px 4px #22222247;
+						}
 
 				}
+				.row > .col-12-small {
+					width: 370px;
+					background-color: #2c475512;
+					margin-left: 15px;
+					margin-top: 20px;
+					margin-bottom: 30px;
+					border-radius: 20px;
+					box-shadow: 0px 0px 10px 0px #22222247;
+				}
+				.row > * {
+					padding: 1.25em 1.25em;
+				}
+@media screen and (max-width: 736px){
+.row > .col-12-small {
+    width: 330px;
+    background-color:#2c475512;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+	box-shadow: 0px 0px 10px 0px #22222247;
+}
+.image.fit {
+    display: block;
+    width: 100%;
+    padding-bottom: 15px;
+    border-radius: 10px;
+}
+.image img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+}
+}
+@media screen and (max-width: 736px){
+.row > * {
+    padding: 1.25em 1.25em;
+}
+}
+@media(max-width:985px){
+	.row > .col-12-small {
+		width: 100%;
+	}
+}
+
 				.podcast{
                     display: flex;
                     flex-wrap: wrap;
@@ -2167,10 +2218,57 @@ input, select, textarea {
 					margin-bottom: 50px;
 					border-radius: 10px;
 					cursor: pointer;
+					box-shadow: 0px 0px 10px 0px #22222247;
 				}
 @media(max-width:767px){
     .podcast div{
     width: 90%;
 	}
 }
-
+@media(max-width:985px){
+	.podcast div{
+		width: 40%;
+	}
+}
+.image img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+}
+.like{
+	background-image: url(./icons8-podcast-50.png);
+}
+.com-label{
+	display: flex;
+    pointer-events: all;
+    width: 30px;
+    border-radius: 20px;
+}
+.com-label input{
+	height: 29px;
+    width: 30px;
+    border-radius: 20px;
+    padding: 0;
+	color: var(--second-color);
+	background-color: transparent;
+	font-weight: bolder;
+}
+.book-form div{
+	display: flex;
+}
+.com-label input:hover{
+	background-color: #adadad;
+}
+#comment{
+	height: 12px;
+    width: 189px;
+    background-color: white;
+    outline: none;
+    list-style: none;
+    resize: none;
+	border-radius: 20px;
+}
+.book-form{
+	display: flex;
+    justify-content: space-between;
+}
